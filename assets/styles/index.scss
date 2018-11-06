@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+
+div.column {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.row {
+  margin: auto;
+  width: 100%;
+}
+
+.column {
+  height: 230px;
+  margin: auto;
+  width: 230px;
+}
