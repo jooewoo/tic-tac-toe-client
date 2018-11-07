@@ -10,7 +10,6 @@ const ui = require('./ui.js')
 const onSignUp = (event) => {
   event.preventDefault()
   // to stop the default value that refreshes the page
-  console.log('sign up ran')
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signUp(userData)
@@ -21,14 +20,33 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault()
   // to stop the default value that refreshes the page
+  console.log('sign in ran')
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signIn(userData)
     .then(ui.signInSuccess)
     .catch(ui.failure)
+  console.log(userData)
+}
+
+const onChangePassword = (event) => {
+  event.preventDefault() // or you can use debugger
+  const userData = getFormFields(event.target)
+  $(event.target).trigger('reset')
+  api.changePassword(userData)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.failure)
+}
+
+const onSignOut = (event) => {
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.failure)
 }
 
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePassword,
+  onSignOut
 }
