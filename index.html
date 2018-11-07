@@ -15,6 +15,7 @@
       <h1>Tic Tac Toe</h1>
 
       <div class="container-fluid">
+<<<<<<< HEAD
         <fieldset>
           <legend>Sign-Up Form</legend>
           <form id="sign-up-form">
@@ -47,13 +48,68 @@
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x1</div>
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x2</div>
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x3</div>
+=======
+
+        <form id="sign-up-form">
+          <legend>Sign-Up Form</legend>
+          <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+          <input name="credentials[password]" type="password" id="password" placeholder="password">
+          <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+          <input type="submit" placeholder="Submit">
+        </form>
+
+        <form id="sign-in-form">
+          <legend>Sign-In Form</legend>
+          <input name="credentials[email]" type="text" placeholder="email@email.com">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input type="submit" placeholder="Submit">
+        </form>
+
+        <form id="change-password-form">
+        <!-- <form id="change-password-form" class ="hidden"> -->
+          <legend>Change Password Form </legend>
+          <input name="passwords[old]" type="text" placeholder="old password"/>
+          <input name="passwords[new]" type="password" placeholder="new password"/>
+          <input type="submit" placeholder="Submit"/>
+        </form>
+
+        <!-- <button id="sign-out-button" class="hidden">Sign Out</button> -->
+        <button id="sign-out-button">Sign Out</button>
+        <p id="message" class="failure"></p>
+>>>>>>> feature
       </div>
-      <div class="row">
-        <div class="column col-4 col-sm-4 col-md-4 col-lg-4">3x1</div>
-        <div class="column col-4 col-sm-4 col-md-4 col-lg-4">3x2</div>
-        <div class="column col-4 col-sm-4 col-md-4 col-lg-4">3x3</div>
+
+      <div id="board" class="hidden">
+        <div id="grid" class="container">
+          <div class="row">
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">1x1</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1x2</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">1x3</div>
+          </div>
+          <div class="row">
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">2x1</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">2x2</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">2x3</div>
+          </div>
+          <div class="row">
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">3x1</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">3x2</div>
+            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">3x3</div>
+          </div>
+        </div>
       </div>
+
+    <div id="start-game">
+      <button id="start-game" onclick="startGame()">Start Game</button>
     </div>
 
+<<<<<<< HEAD
+=======
+    <div id="end-game" class="hidden">
+      <button id="start-game" onclick="startGame()">Replay</button>
+    </div>
+
+    <script src="main.js"></script>
+>>>>>>> feature
     </body>
 </html>
