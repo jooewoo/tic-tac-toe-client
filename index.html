@@ -44,34 +44,35 @@
         <p id="message" class="failure"></p>
       </div>
 
-      <div id="board" class="hidden">
-        <div id="grid" class="container">
-          <div class="row">
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">1x1</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1x2</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">1x3</div>
-          </div>
-          <div class="row">
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">2x1</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">2x2</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">2x3</div>
-          </div>
-          <div class="row">
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">3x1</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">3x2</div>
-            <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">3x3</div>
-          </div>
+
+      <div id="board" class="container hidden" class="hidden">
+        <div class="row">
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">1x1</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1x2</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">1x3</div>
+        </div>
+        <div class="row">
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">2x1</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">2x2</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">2x3</div>
+        </div>
+        <div class="row">
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">3x1</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">3x2</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">3x3</div>
         </div>
       </div>
 
+
     <div id="start-game">
-      <button id="start-game" onclick="startGame()">Start Game</button>
+      <button id="start-game-button" onclick="startGame()">Start Game</button>
     </div>
 
     <div id="end-game" class="hidden">
-      <button id="start-game" onclick="startGame()">Replay</button>
+      <button id="end-game-button" onclick="replay()">Replay</button>
     </div>
 
-    <script src="main.js"></script>
+    <script src="assets/scripts/main.js"></script>
+
     </body>
 </html>

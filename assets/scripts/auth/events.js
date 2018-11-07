@@ -20,13 +20,11 @@ const onSignUp = (event) => {
 const onSignIn = (event) => {
   event.preventDefault()
   // to stop the default value that refreshes the page
-  console.log('sign in ran')
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signIn(userData)
     .then(ui.signInSuccess)
     .catch(ui.failure)
-  console.log(userData)
 }
 
 const onChangePassword = (event) => {
