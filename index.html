@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,10 +12,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic Tac Toe</h1>
+
       <div class="container-fluid">
-        container fluid body
+        <fieldset>
+          <legend>Sign-Up Form</legend>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="text" placeholder="email@email.com">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+            <input type="submit" placeholder="Submit">
+          </form>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sign-In Form</legend>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="text" placeholder="email@email.com">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input type="submit" placeholder="Submit">
+          </form>
+        </fieldset>
+
+        <p id="message"></p>
       </div>
+
       <div id="3x3grid" class="container">
       <div class="row">
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">1x1</div>
@@ -33,5 +54,6 @@
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">3x3</div>
       </div>
     </div>
+
     </body>
 </html>
