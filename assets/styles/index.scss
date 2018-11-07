@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+$green-color: #0ba029;
+$bright-red-color: #f44842;
 
 div.column {
   border-style: solid;
@@ -11,7 +13,19 @@ div.column {
 }
 
 .column {
-  height: 290px;
+  height: 200px;
   margin: auto;
-  width: 230px;
+  width: 130px;
+}
+
+.error-message {
+  color: $bright-red-color;
+}
+
+.success-message {
+  color: $green-color;
+}
+
+.hidden {
+  display: none;
 }
