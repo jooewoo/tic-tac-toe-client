@@ -8,7 +8,6 @@ const signUpSuccess = (signUpResponse) => {
 }
 
 const signInSuccess = (signInResponse) => {
-  console.log('this is the' + signInResponse)
   store.user = signInResponse.user
   $('#message').html('You signed in successfully')
   $('#message').removeClass('error-message')
@@ -18,6 +17,8 @@ const signInSuccess = (signInResponse) => {
   $('#sign-out-button').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
+  $('#start-new-game').removeClass('hidden')
+  $('#previous-game').removeClass('hidden')
 }
 
 const changePasswordSuccess = () => {

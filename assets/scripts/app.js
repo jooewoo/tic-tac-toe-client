@@ -1,6 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
+const gameEvents = require('./game/events.js')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
@@ -8,5 +9,6 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
 
-  // $('#create-example-form').on('submit', exampleEvents.onCreateExample)
+  $('#start-game-button').on('click', gameEvents.onCreateGame)
+  $('#start-game-form').on('submit', gameEvents.onGetGame)
 })
