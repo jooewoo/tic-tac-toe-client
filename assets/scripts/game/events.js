@@ -5,9 +5,8 @@ const ui = require('./ui.js')
 
 const onCreateGame = (event) => {
   event.preventDefault()
-  const gameData = getFormFields(event.target)
   $(event.target).trigger('reset')
-  api.createGame(gameData)
+  api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.failure)
 }
@@ -15,15 +14,38 @@ const onCreateGame = (event) => {
 const onGetGame = (event) => {
   event.preventDefault()
   const gameData = getFormFields(event.target)
+  console.log(gameData)
+  const gameId = gameData.game.id
   $(event.target).trigger('reset')
-  api.getGame(gameData)
-    .then(ui.getGameSuccess)
+  if (gameId === '') {
+    $('#game-board').html('Please enter an ID')
+  } else {
+    $('#game-board').addClass('hidden')
+    // make a GET request with form data
+    api.getGame(gameId)
+    // display bookData to user
+      .then(ui.getGameSuccess)
+    // display error message if there is a problem
+      .catch(ui.failure)
+  }
+}
+
+const onShowAllGames = (event) => {
+  event.preventDefault()
+  const gameData = getFormFields(event.target)
+  $(event.target).trigger('reset')
+  // make a GET request with form data
+  api.showAllGames(gameData)
+  // display bookData to user
+    .then(ui.showAllGamesSuccess)
+  // display error message if there is a problem
     .catch(ui.failure)
 }
 
 module.exports = {
   onCreateGame,
-  onGetGame
+  onGetGame,
+  onShowAllGames
 }
 // const startGame = () => {
 //   $('#board').show()

@@ -1,18 +1,24 @@
 'use strict'
 const store = require('../store.js')
 
-const createGameSuccess = (newGame) => {
-  store.user = newGame.game
-  console.log(store.user)
-  $('#game-message').html(`New game with game id:"${newGame.game.player_x.id}" was created.`)
+const createGameSuccess = () => {
+  console.log('this is create game success object', store.user)
+  $('#game-message').html(`New game with game id:"${store.user.id}" was created.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
 }
 
-const getGameSuccess = (newGame) => {
-  store.user = newGame.game
+const getGameSuccess = () => {
+  console.log('this is get game success object', store.user)
+  $('#game-message').html(`Previous game with game id:"${store.user.id}" was loaded.`)
+  $('#game-message').removeClass('error-message')
+  $('#game-message').addClass('success-message')
+}
+
+const showAllGamesSuccess = () => {
   console.log(store.user)
-  $('#game-message').html(`Previous game with game id:"${newGame.game.player_x.id}" was loaded.`)
+  console.log('this is show all game success object', store.user)
+  $('#game-message').html(`Previous game with game id:"${store.user}" was loaded.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
 }
@@ -26,5 +32,6 @@ const failure = () => {
 module.exports = {
   createGameSuccess,
   getGameSuccess,
+  showAllGamesSuccess,
   failure
 }

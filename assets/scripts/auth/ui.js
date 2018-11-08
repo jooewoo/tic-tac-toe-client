@@ -19,6 +19,7 @@ const signInSuccess = (signInResponse) => {
   $('#sign-in-form').addClass('hidden')
   $('#start-new-game').removeClass('hidden')
   $('#previous-game').removeClass('hidden')
+  $('#show-all-games').removeClass('hidden')
 }
 
 const changePasswordSuccess = () => {

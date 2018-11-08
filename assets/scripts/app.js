@@ -10,5 +10,6 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
 
   $('#start-game-button').on('click', gameEvents.onCreateGame)
-  $('#start-game-form').on('submit', gameEvents.onGetGame)
+  $('#previous-game').on('submit', gameEvents.onGetGame)
+  $('#show-games-button').on('click', gameEvents.onShowAllGames)
 })

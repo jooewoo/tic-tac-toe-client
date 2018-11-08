@@ -14,9 +14,21 @@ const createGame = (gameData) => {
   })
 }
 
-const getGame = (gameData) => {
+const getGame = (gameId) => {
   return $.ajax({
-    url: config.apiUrl + '/games/', // need id
+    url: config.apiUrl + '/games/' + gameId,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(gameId)
+  })
+}
+
+const showAllGames = (gameData) => {
+  return $.ajax({
+    url: config.apiUrl + `/games`,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -28,5 +40,6 @@ const getGame = (gameData) => {
 
 module.exports = {
   createGame,
-  getGame
+  getGame,
+  showAllGames
 }
