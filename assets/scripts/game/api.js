@@ -38,8 +38,28 @@ const showAllGames = (gameData) => {
   })
 }
 
+const updateMove = (index, value) => {
+  return $.ajax({
+    url: config.apiUrl + `/games` + store.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        },
+        'over': false
+      }
+    }
+  })
+}
 module.exports = {
   createGame,
   getGame,
-  showAllGames
+  showAllGames,
+  updateMove
 }

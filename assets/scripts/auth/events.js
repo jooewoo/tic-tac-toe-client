@@ -6,6 +6,7 @@ const api = require('./api.js')
 // requests you want to use for your data
 const ui = require('./ui.js')
 // initializes the ui.js to show data to user
+// const store = require('./../store.js') need to store gameboard to save progress
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -19,7 +20,6 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
-  // to stop the default value that refreshes the page
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signIn(userData)
@@ -28,7 +28,7 @@ const onSignIn = (event) => {
 }
 
 const onChangePassword = (event) => {
-  event.preventDefault() // or you can use debugger
+  event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.changePassword(userData)

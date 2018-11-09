@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash "over":"'"${OVER}"'"
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --include \

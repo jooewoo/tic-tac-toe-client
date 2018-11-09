@@ -39,45 +39,51 @@
         </form>
 
         <button id="sign-out-button" class="hidden">Sign Out</button>
+
+        <div id="start-new-game" class="hidden">
+          <button id="start-game-button">Start Game</button>
+        </div>
+
+        <div id="replay-game" class="hidden">
+          <button id="end-game-button">Replay</button>
+        </div>
+
+        <form id="previous-game" class="hidden">
+          <input name="game[id]" type="text" placeholder="Game ID">
+          <input type="submit" placeholder="Previous Game">
+          <!-- <button id="start-game-button">Previous Game</button> -->
+        </form>
+
+        <div id="show-all-games" class="hidden">
+          <button id="show-games-button">Show All Games</button>
+        </div>
         <p id="message" class="failure"></p>
       </div>
 
 
       <div id="board" class="container hidden" class="hidden">
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">1x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">1x3</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">0</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">2</div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">2x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">2x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">2x3</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">3</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">4</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">5</div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">3x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">3x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">3x3</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">6</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">7</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">8</div>
         </div>
       </div>
 
-      <div id="start-new-game" class="hidden">
-        <button id="start-game-button">Start Game</button>
-      </div>
-
-      <div id="replay-game" class="hidden">
-        <button id="end-game-button">Replay</button>
-      </div>
-
-      <form id="previous-game" class="hidden">
-        <input name="game[id]" type="text" placeholder="Game ID">
-        <input type="submit" placeholder="Previous Game">
-        <!-- <button id="start-game-button">Previous Game</button> -->
-      </form>
-
-      <div id="show-all-games" class="hidden">
-        <button id="show-games-button">Show All Games</button>
-      </div>
+      <!-- <form class="hidden">
+        <input name="game[cell][index]" type="text" value="0">
+        <input name="game[cell][value]" type="text" value="x">
+        <input name="game[over]" type="text" value="false">
+      </form> -->
 
       <div id="game-board">
         <p id="game-message" class="game-failure"></p>

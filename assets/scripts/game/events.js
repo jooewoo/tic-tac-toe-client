@@ -1,11 +1,12 @@
 'use strict'
+// {"game":{"id":2433,"cells":["","","","","","","","",""],"over":false,"player_x":{"id":407,"email":"1111"},"player_o":null}}
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 const onCreateGame = (event) => {
   event.preventDefault()
-  $(event.target).trigger('reset')
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.failure)
@@ -14,18 +15,14 @@ const onCreateGame = (event) => {
 const onGetGame = (event) => {
   event.preventDefault()
   const gameData = getFormFields(event.target)
-  console.log(gameData)
   const gameId = gameData.game.id
   $(event.target).trigger('reset')
   if (gameId === '') {
     $('#game-board').html('Please enter an ID')
   } else {
     $('#game-board').addClass('hidden')
-    // make a GET request with form data
     api.getGame(gameId)
-    // display bookData to user
       .then(ui.getGameSuccess)
-    // display error message if there is a problem
       .catch(ui.failure)
   }
 }
@@ -34,27 +31,26 @@ const onShowAllGames = (event) => {
   event.preventDefault()
   const gameData = getFormFields(event.target)
   $(event.target).trigger('reset')
-  // make a GET request with form data
   api.showAllGames(gameData)
-  // display bookData to user
     .then(ui.showAllGamesSuccess)
-  // display error message if there is a problem
     .catch(ui.failure)
+}
+
+// game was advised to always start with x
+let player = 'x'
+
+const onUpdateMove = (event) => {
+  const index = event.target.id
+  const value = player
+  store.gameBoard[index] = player
+  api.updateMove(index, value)
+    .then(ui.updateMoves)
+    .catch(ui)
 }
 
 module.exports = {
   onCreateGame,
   onGetGame,
-  onShowAllGames
+  onShowAllGames,
+  onUpdateMove
 }
-// const startGame = () => {
-//   $('#board').show()
-//   $('#end-game').removeClass('hidden')
-//   $('#start-game').addClass('hidden')
-// }
-//
-// const replay = () => {
-//   $('#board').hide()
-//   $('#start-game').removeClass('hidden')
-//   $('#end-game').addClass('hidden')
-// }
