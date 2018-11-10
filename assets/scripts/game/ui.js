@@ -1,7 +1,9 @@
 'use strict'
 const store = require('../store.js')
 
-const createGameSuccess = () => {
+const createGameSuccess = (game) => {
+  store.gameID = game.game.id
+  console.log('this is the store object', store)
   $('#game-message').html(`New game was created.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
@@ -30,13 +32,13 @@ const failure = () => {
 }
 
 const updateMoves = (id, player) => {
-  console.log()
   if (player === 'x') {
-    $('#' + id)
+    $('.box').html(id)
   } else if (player === 'o') {
-    $('#' + id)
+    $(event.target).html(id)
   }
 }
+
 module.exports = {
   createGameSuccess,
   getGameSuccess,

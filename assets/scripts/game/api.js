@@ -2,15 +2,14 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const createGame = (gameData) => {
+const createGame = () => {
   return $.ajax({
     url: config.apiUrl + '/games/',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    contentType: 'application/json',
-    data: JSON.stringify(gameData)
+    contentType: 'application/json'
   })
 }
 
@@ -40,23 +39,26 @@ const showAllGames = (gameData) => {
 
 const updateMove = (index, value) => {
   return $.ajax({
-    url: config.apiUrl + `/games` + store.game.id,
-    method: 'GET',
+    url: config.apiUrl + `/games/` + store.gameID,
+    method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: {
-      'game': {
-        'cell': {
-          'index': index,
-          'value': value
-        },
-        'over': false
+    data: JSON.stringify(
+      {
+        'game': {
+          'cells': {
+            'index': index,
+            'value': value
+          },
+          'over': false
+        }
       }
-    }
+    )
   })
 }
+
 module.exports = {
   createGame,
   getGame,

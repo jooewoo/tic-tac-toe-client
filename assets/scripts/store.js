@@ -3,17 +3,20 @@
 const store = {
 }
 
-const game = {
+const games = {
 }
 
-const games = {
+const cells = {
 }
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
+const over = false
+
 module.exports = {
   store,
-  game,
   games,
-  gameBoard
+  cells,
+  gameBoard,
+  over
 }

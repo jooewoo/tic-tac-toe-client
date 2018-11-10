@@ -37,13 +37,17 @@ const onShowAllGames = (event) => {
 }
 
 // game was advised to always start with x
-let player = 'x'
+const player = 'X'
 
 const onUpdateMove = (event) => {
-  const index = event.target.id
   const value = player
-  store.gameBoard[index] = player
-  api.updateMove(index, value)
+  // const id = event.target
+  // console.log(id)
+  const id = $(event.target).data().cellIndex
+  console.log(id)
+  store.gameBoard[id] = value
+  console.log(store)
+  api.updateMove(id, value)
     .then(ui.updateMoves)
     .catch(ui)
 }
