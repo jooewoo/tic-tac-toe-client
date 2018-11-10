@@ -4,6 +4,7 @@ const store = require('../store.js')
 const createGameSuccess = (game) => {
   store.gameID = game.game.id
   store.cells = game.game.cells
+  store.over = game.game.over
   console.log('this is the store object', store)
   $('#game-message').html(`New game was created.`)
   $('#game-message').removeClass('error-message')

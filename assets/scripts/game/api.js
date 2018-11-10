@@ -37,7 +37,7 @@ const showAllGames = (gameData) => {
   })
 }
 
-const updateMove = (index, value) => {
+const updateMove = (index, value, over) => {
   return $.ajax({
     url: config.apiUrl + `/games/` + store.gameID,
     method: 'PATCH',
@@ -52,7 +52,7 @@ const updateMove = (index, value) => {
             'index': index,
             'value': value
           },
-          'over': false
+          'over': over
         }
       }
     )
