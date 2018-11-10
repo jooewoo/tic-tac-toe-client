@@ -6,17 +6,13 @@ const store = {
 const games = {
 }
 
-const cells = {
-}
-
-const gameBoard = ['', '', '', '', '', '', '', '', '']
-
 const over = false
+
+const player = 'x'
 
 module.exports = {
   store,
   games,
-  cells,
-  gameBoard,
-  over
+  over,
+  player
 }

@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
+const gameLogic = require('./gamelogic.js')
 
 const onCreateGame = (event) => {
   event.preventDefault()
@@ -37,19 +38,16 @@ const onShowAllGames = (event) => {
 }
 
 // game was advised to always start with x
-const player = 'X'
 
 const onUpdateMove = (event) => {
-  const value = player
-  // const id = event.target
-  // console.log(id)
+  const value = store.player
   const id = $(event.target).data().cellIndex
-  console.log(id)
-  store.gameBoard[id] = value
-  console.log(store)
   api.updateMove(id, value)
     .then(ui.updateMoves)
     .catch(ui)
+  gameLogic.gameBoard(id, value)
+  gameLogic.switchPlayer(value)
+  console.log(store)
 }
 
 module.exports = {
