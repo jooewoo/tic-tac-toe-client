@@ -2,10 +2,11 @@
 const store = require('../store.js')
 
 const createGameSuccess = (game) => {
+  // THe next 3 lines store the game ID, cells, and over
   store.gameID = game.game.id
   store.cells = game.game.cells
   store.over = game.game.over
-  console.log('this is the store object', store)
+  // console.log('this is the store object', store)
   $('#game-message').html(`New game was created.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
@@ -14,7 +15,7 @@ const createGameSuccess = (game) => {
 }
 
 const getGameSuccess = (gameId) => {
-  console.log('this is get game success object', gameId)
+  // console.log('this is get game success object', gameId)
   $('#game-message').html(`Previous game with game id:"${gameId}" was loaded.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
@@ -22,7 +23,7 @@ const getGameSuccess = (gameId) => {
 }
 
 const showAllGamesSuccess = () => {
-  console.log('this is show all game success object', store.user.id)
+  // console.log('this is show all game success object', store.user.id)
   $('#game-message').html(`Previous game with game id:"${store.user.id}" was loaded.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
@@ -34,7 +35,7 @@ const failure = () => {
   $('.game-failure').addClass('error-message')
 }
 
-const updateMoves = (id, value, over) => {
+const updateMoves = (id, value, over, winner) => {
   if (value === 'x' && over === false && store.cells[id] === '') {
     $($(event.target)).html(value)
   } else if (value === 'o' && over === false && store.cells[id] === '') {

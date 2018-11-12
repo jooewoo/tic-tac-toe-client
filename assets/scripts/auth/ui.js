@@ -37,6 +37,7 @@ const signOutSuccess = () => {
   $('#sign-out-button').addClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
+  $('.box').hide()
 }
 
 const failure = (failureResponse) => {

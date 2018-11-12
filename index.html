@@ -13,66 +13,21 @@
     </head>
     <body>
       <nav class="navbar navbar-dark bg-dark">
-        <h1>Tic Tac Toe</h1>
+        <h1>NFL Tic Tac Toe</h1>
         <div class="container-fluid">
 
-          <!-- Sign Up Modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Sign Up
-          </button>
-          <!-- Sign Up Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Sign Up Form</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-up-form">
-                    <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
-                    <input name="credentials[password]" type="password" id="password" placeholder="password">
-                    <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
-                    <div class="modal-footer">
-                      <input type="submit" placeholder="Submit">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+            <input name="credentials[password]" type="password" id="password" placeholder="password">
+            <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+            <input type="submit" placeholder="Submit">
+          </form>
 
-          <!-- Sign In Modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
-            Sign In
-          </button>
-
-          <!-- Sign In Modal -->
-          <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle1">Sign In</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-in-form">
-                    <input name="credentials[email]" type="text" placeholder="email@email.com">
-                    <input name="credentials[password]" type="password" placeholder="password">
-                    <div class="modal-footer">
-                      <input type="submit" placeholder="Submit">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="text" placeholder="email@email.com">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input type="submit" placeholder="Submit">
+          </form>
 
           <form id="change-password-form" class="hidden">
             <legend>Change Password Form </legend>
@@ -84,7 +39,7 @@
           <button id="sign-out-button" class="hidden">Sign Out</button>
 
           <div id="start-new-game" class="hidden">
-            <button id="start-game-button">Start Game</button>
+            <button id="start-game-button">Start New Game</button>
           </div>
 
           <div id="replay-game" class="hidden">
@@ -104,9 +59,21 @@
         </div>
       </nav>
 
-
-      <div id="board" class="container hidden" class="hidden">
-        <div class="row">
+      <div id="board" class="container">
+        <div class="game-container">
+        <div class="game-board">
+          <div data-cell-index='0' class="box"></div>
+          <div data-cell-index='1' class="box"></div>
+          <div data-cell-index='2' class="box"></div>
+          <div data-cell-index='3' class="box"></div>
+          <div data-cell-index='4' class="box"></div>
+          <div data-cell-index='5' class="box"></div>
+          <div data-cell-index='6' class="box"></div>
+          <div data-cell-index='7' class="box"></div>
+          <div data-cell-index='8' class="box"></div>
+        </div>
+      </div>
+        <!-- <div class="row">
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="0"></div>
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="1"></div>
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="2"></div>
@@ -120,7 +87,7 @@
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="6"></div>
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="7"></div>
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="8"></div>
-        </div>
+        </div> -->
       </div>
 
       <div id="game-board">
