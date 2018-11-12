@@ -12,78 +12,116 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <nav class="navbar navbar-dark bg-dark">
+        <h1>Tic Tac Toe</h1>
+        <div class="container-fluid">
 
-      <div class="container-fluid">
+          <!-- Sign Up Modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Sign Up
+          </button>
+          <!-- Sign Up Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Sign Up Form</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up-form">
+                    <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+                    <input name="credentials[password]" type="password" id="password" placeholder="password">
+                    <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+                    <div class="modal-footer">
+                      <input type="submit" placeholder="Submit">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <form id="sign-up-form">
-          <legend>Sign-Up Form</legend>
-          <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
-          <input name="credentials[password]" type="password" id="password" placeholder="password">
-          <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
-          <input type="submit" placeholder="Submit">
-        </form>
+          <!-- Sign In Modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
+            Sign In
+          </button>
 
-        <form id="sign-in-form">
-          <legend>Sign-In Form</legend>
-          <input name="credentials[email]" type="text" placeholder="email@email.com">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input type="submit" placeholder="Submit">
-        </form>
+          <!-- Sign In Modal -->
+          <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle1">Sign In</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in-form">
+                    <input name="credentials[email]" type="text" placeholder="email@email.com">
+                    <input name="credentials[password]" type="password" placeholder="password">
+                    <div class="modal-footer">
+                      <input type="submit" placeholder="Submit">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <form id="change-password-form" class="hidden">
-          <legend>Change Password Form </legend>
-          <input name="passwords[old]" type="text" placeholder="old password"/>
-          <input name="passwords[new]" type="password" placeholder="new password"/>
-          <input type="submit" placeholder="Submit"/>
-        </form>
+          <form id="change-password-form" class="hidden">
+            <legend>Change Password Form </legend>
+            <input name="passwords[old]" type="text" placeholder="old password"/>
+            <input name="passwords[new]" type="password" placeholder="new password"/>
+            <input type="submit" placeholder="Submit"/>
+          </form>
 
-        <button id="sign-out-button" class="hidden">Sign Out</button>
+          <button id="sign-out-button" class="hidden">Sign Out</button>
 
-        <div id="start-new-game" class="hidden">
-          <button id="start-game-button">Start Game</button>
+          <div id="start-new-game" class="hidden">
+            <button id="start-game-button">Start Game</button>
+          </div>
+
+          <div id="replay-game" class="hidden">
+            <button id="end-game-button">Replay</button>
+          </div>
+
+          <form id="previous-game" class="hidden">
+            <input name="game[id]" type="text" placeholder="Game ID">
+            <input type="submit" placeholder="Previous Game">
+            <!-- <button id="start-game-button">Previous Game</button> -->
+          </form>
+
+          <div id="show-all-games" class="hidden">
+            <button id="show-games-button">Show All Games</button>
+          </div>
+          <p id="message" class="failure"></p>
         </div>
-
-        <div id="replay-game" class="hidden">
-          <button id="end-game-button">Replay</button>
-        </div>
-
-        <form id="previous-game" class="hidden">
-          <input name="game[id]" type="text" placeholder="Game ID">
-          <input type="submit" placeholder="Previous Game">
-          <!-- <button id="start-game-button">Previous Game</button> -->
-        </form>
-
-        <div id="show-all-games" class="hidden">
-          <button id="show-games-button">Show All Games</button>
-        </div>
-        <p id="message" class="failure"></p>
-      </div>
+      </nav>
 
 
       <div id="board" class="container hidden" class="hidden">
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="0">0</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="1">1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="2">2</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="0"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="1"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="2"></div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="3">3</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="4">4</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="5">5</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="3"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="4"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="5"></div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="6">6</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="7">7</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="8">8</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="6"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="7"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="8"></div>
         </div>
       </div>
-
-      <!-- <form class="hidden">
-        <input name="game[cell][index]" type="text" value="0">
-        <input name="game[cell][value]" type="text" value="x">
-        <input name="game[over]" type="text" value="false">
-      </form> -->
 
       <div id="game-board">
         <p id="game-message" class="game-failure"></p>

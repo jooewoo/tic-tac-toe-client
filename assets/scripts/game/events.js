@@ -42,14 +42,15 @@ const onShowAllGames = (event) => {
 const onUpdateMove = (event) => {
   const value = store.player
   const id = $(event.target).data().cellIndex
-  const over = store.
+  const over = store.over
   api.updateMove(id, value, over)
-    .then(ui.updateMoves)
-    .catch(ui)
-  gameLogic.gameBoard(id, value)
+    .then(ui.updateMoves(id, value, over))
+    .catch(ui.failure)
+  gameLogic.gameBoard(id, value, over)
   gameLogic.switchPlayer(value)
-  console.log(store)
+  console.log(store.cells)
   gameLogic.winningConditions(store.cells)
+  gameLogic.gameOver()
 }
 
 module.exports = {

@@ -10,6 +10,7 @@ const createGameSuccess = (game) => {
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
   $('#board').show()
+  $('.box').empty()
 }
 
 const getGameSuccess = (gameId) => {
@@ -33,11 +34,11 @@ const failure = () => {
   $('.game-failure').addClass('error-message')
 }
 
-const updateMoves = (id, player) => {
-  if (player === 'x') {
-    $('.box').html(id)
-  } else if (player === 'o') {
-    $(event.target).html(id)
+const updateMoves = (id, value, over) => {
+  if (value === 'x' && over === false && store.cells[id] === '') {
+    $($(event.target)).html(value)
+  } else if (value === 'o' && over === false && store.cells[id] === '') {
+    $($(event.target)).html(value)
   }
 }
 
