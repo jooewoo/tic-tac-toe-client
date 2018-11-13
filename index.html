@@ -12,8 +12,13 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <nav class="navbar">
+        <div class="picture">
+          <img src="./teams/nfl-icon.png" alt="nfl-icon" height="75" width="75">
+          <h1>NFL Tic Tac Toe</h1>
+        </div>
 
+<<<<<<< HEAD
       <div class="container-fluid">
         <fieldset>
           <legend>Sign-Up Form</legend>
@@ -47,40 +52,143 @@
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x1</div>
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x2</div>
         <div class="column col-4 col-sm-4 col-md-4 col-lg-4">2x3</div>
+=======
+        <div class="btn-group">
+          <div id="sign-up-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign Up!
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up">
+              <form id="sign-up-form">
+                <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" id="password" placeholder="password">
+                <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div id="sign-in-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign In
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in">
+              <form id="sign-in-form">
+                <input name="credentials[email]" type="text" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" placeholder="password">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div class="btn-group-1">
+            <div id="change-password-dropdown" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Password
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-right">
+                <form id="change-password-form">
+                  <input name="passwords[old]" type="text" placeholder="old password"/>
+                  <input name="passwords[new]" type="password" placeholder="new password"/>
+                  <input type="submit" placeholder="Submit"/>
+                </form>
+              </div>
+            </div>
+
+            <div id="sign-out-button" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                Sign Out
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="board-buttons">
+        <div id="start-new-game" class="hidden">
+          <button id="start-game-button">Start New Game</button>
+        </div>
+
+        <form id="previous-game" class="hidden">
+          <input class="previous-game-box" name="game[id]" type="text" placeholder="Game ID">
+          <input type="submit" id="previous-game-input" placeholder="Previous Game">
+        </form>
+
+        <div id="show-all-games" class="hidden">
+          <button id="show-games-button">Show All Games</button>
+        </div>
+
+>>>>>>> feature
+      </div>
+
+      <div id="board" class="container hidden">
+          <div class="game-container">
+          <div class="game-board">
+            <div data-cell-index='0' class="box"></div>
+            <div data-cell-index='1' class="box"></div>
+            <div data-cell-index='2' class="box"></div>
+            <div data-cell-index='3' class="box"></div>
+            <div data-cell-index='4' class="box"></div>
+            <div data-cell-index='5' class="box"></div>
+            <div data-cell-index='6' class="box"></div>
+            <div data-cell-index='7' class="box"></div>
+            <div data-cell-index='8' class="box"></div>
+          </div>
+        </div>
       </div>
 
 
-      <div id="board" class="container hidden" class="hidden">
-        <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="0">1x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="1">1x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="2">1x3</div>
+
+        <!-- <div class="row">
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="0"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="1"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="2"></div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="3">2x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="4">2x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="5">2x3</div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="3"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="4"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="5"></div>
         </div>
         <div class="row">
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="6">3x1</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="7">3x2</div>
-          <div class="column col-4 col-sm-4 col-md-4 col-lg-4" data-cell-index="8">3x3</div>
-        </div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="6"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="7"></div>
+          <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="8"></div>
+        </div> -->
+      <!-- </div> -->
+
+      <!-- <div class="choose-player">
+      <div class="icon">
+        <img id="player_x" alt="player x" data-player="1" data-toggle="modal" data-target="choose-#nfl-team" class="world-wonders" src="./../../teams/eagles.png">
+        <p>vs</p>
+        <img id="player2" alt="player 2" data-player="2" data-toggle="modal" data-target="choose-#nfl-team" class="nfl-teams" src="./../../teams/patriots.png">
       </div>
 
+      <div class="modal fade" id="choose-#nfl-team" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog player-choice modal-dialog-centered" role="dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-header">Choose your favorite team</h5>
+            </div>
+            <div class="modal-body list">
+            </div>
+          </div>
+        </div>
+      </div> -->
 
-    <div id="start-game">
-      <button id="start-game-button" onclick="startGame()">Start Game</button>
-    </div>
-
-    <div id="end-game" class="hidden">
-      <button id="end-game-button" onclick="replay()">Replay</button>
-    </div>
-
+<<<<<<< HEAD
 <<<<<<< HEAD
     <script src="main.js"></script>
 =======
     <script src="assets/scripts/main.js"></script>
+=======
+      <div id="game-board-message">
+        <p id="game-message" class="game-failure"></p>
+        <p id="players-turn"></p>
+      </div>
+>>>>>>> feature
 
 >>>>>>> feature
     </body>

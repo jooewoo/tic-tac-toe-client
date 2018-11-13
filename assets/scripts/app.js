@@ -15,6 +15,7 @@ $(() => {
   // $('#sign-out-button').on('click', authEvents.onSignOut)
 =======
 const authEvents = require('./auth/events.js')
+const gameEvents = require('./game/events.js')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
@@ -23,5 +24,8 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
 >>>>>>> feature
 
-  // $('#create-example-form').on('submit', exampleEvents.onCreateExample)
+  $('#start-game-button').on('click', gameEvents.onCreateGame)
+  $('#previous-game').on('submit', gameEvents.onGetGame)
+  $('#show-games-button').on('click', gameEvents.onShowAllGames)
+  $('.box').on('click', gameEvents.onUpdateMove)
 })
