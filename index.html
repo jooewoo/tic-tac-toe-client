@@ -13,7 +13,7 @@
     </head>
     <body>
       <nav class="navbar navbar-dark bg-dark">
-        <h1>NFL Tic Tac Toe</h1>
+        <h1>2018 NFL Tic Tac Toe</h1>
         <div class="container-fluid">
 
           <form id="sign-up-form">
@@ -22,6 +22,7 @@
             <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
             <input type="submit" placeholder="Submit">
           </form>
+
 
           <form id="sign-in-form">
             <input name="credentials[email]" type="text" placeholder="email@email.com">
@@ -88,10 +89,30 @@
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="7"></div>
           <div class="column col-4 col-sm-4 col-md-4 col-lg-4 box" data-cell-index="8"></div>
         </div> -->
+      <!-- </div> -->
+
+      <!-- <div class="choose-player">
+      <div class="icon">
+        <img id="player_x" alt="player x" data-player="1" data-toggle="modal" data-target="choose-#nfl-team" class="world-wonders" src="./../../teams/eagles.png">
+        <p>vs</p>
+        <img id="player2" alt="player 2" data-player="2" data-toggle="modal" data-target="choose-#nfl-team" class="nfl-teams" src="./../../teams/patriots.png">
       </div>
+
+      <div class="modal fade" id="choose-#nfl-team" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog player-choice modal-dialog-centered" role="dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-header">Choose your favorite team</h5>
+            </div>
+            <div class="modal-body list">
+            </div>
+          </div>
+        </div>
+      </div> -->
 
       <div id="game-board">
         <p id="game-message" class="game-failure"></p>
       </div>
+
     </body>
 </html>
