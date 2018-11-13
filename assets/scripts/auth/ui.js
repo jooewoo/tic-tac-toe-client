@@ -25,6 +25,13 @@ const signInSuccess = (signInResponse) => {
   $('#show-all-games').removeClass('hidden')
 }
 
+const changePasswordSuccess = () => {
+  $('#game-message').html('You changed password successfully')
+  $('#game-message').removeClass('error-message')
+  $('#game-message').addClass('success-message')
+  $('#game-message').fadeOut(5000)
+}
+
 const signOutSuccess = () => {
   $('#game-message').html('You signed out successfully')
   $('#game-message').removeClass('error-message')
@@ -51,6 +58,7 @@ const failure = (failureResponse) => {
 module.exports = {
   signUpSuccess,
   signInSuccess,
+  changePasswordSuccess,
   signOutSuccess,
   failure
 }
