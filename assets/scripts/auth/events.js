@@ -10,11 +10,6 @@ const ui = require('./ui.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
-  // to stop the default value that refreshes the page
-<<<<<<< HEAD
-  console.log('sign up ran')
-=======
->>>>>>> feature
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signUp(userData)
@@ -24,28 +19,11 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
-<<<<<<< HEAD
-  // to stop the default value that refreshes the page
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  console.log('sign in ran')
->>>>>>> feature
-=======
->>>>>>> feature
-=======
->>>>>>> feature
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   api.signIn(userData)
     .then(ui.signInSuccess)
     .catch(ui.failure)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  console.log(userData)
-=======
->>>>>>> feature
 }
 
 const onChangePassword = (event) => {
@@ -61,7 +39,6 @@ const onSignOut = (event) => {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.failure)
->>>>>>> feature
 }
 
 // const onChooseTeam = (event) => {
@@ -92,11 +69,7 @@ const onSignOut = (event) => {
 
 module.exports = {
   onSignUp,
-<<<<<<< HEAD
-  onSignIn
-=======
   onSignIn,
   onChangePassword,
   onSignOut
->>>>>>> feature
 }
