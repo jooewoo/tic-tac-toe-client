@@ -1,43 +1,318 @@
 @import '~bootstrap/scss/bootstrap';
 $green-color: #0ba029;
 $bright-red-color: #f44842;
+$midnight-blue: #013369;
+$white: #fff;
+$black: #000;
+$nfl-red: #d80001;
+$message: #1e804d;
+$light-green: #add1ba;
+
+.navbar {
+  background-color: $midnight-blue;
+  color: $white;
+}
+
+.picture {
+  align-items: center;
+  display: flex;
+  width: 550px;
+
+  h1 {
+    margin-left: 20px;
+  }
+}
+
+.btn {
+  background-color: $midnight-blue;
+  border: 1px solid $white;
+
+  &:hover {
+    background-color: $nfl-red;
+  }
+
+  &:active {
+    background-color: $nfl-red;
+  }
+}
+
+.btn-secondary.dropdown-toggle {
+  border-color: $midnight-blue;
+
+  &:hover {
+    background-color: $nfl-red;
+  }
+}
+
+.btn-group {
+  background-color: $midnight-blue;
+  display: flex;
+}
+
+.btn-group-1 {
+  display: flex;
+}
+
+.board-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
 
 .game-container {
-  margin: 120px auto 0;
+  margin: 50px auto 0;
+}
+
+.previous-game-box {
+  width: 80px;
+}
+
+#start-new-game {
+  margin: 0 10px;
+}
+
+#previous-game {
+  margin: 0 10px;
+}
+
+#show-all-games {
+  margin: 0 10px;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url('./../../../teams/nfl-field.png');
+  // background-repeat: repeat;
+  // background-size: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
 }
 
 .game-board {
-  background-color: white;
-  border: 4px solid gray;
+  background-color: $white;
+  border: 4px solid $midnight-blue;
   border-radius: 10px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  height: 310px;
+  height: 400px;
   margin: 0 auto;
-  width: 310px;
+  width: 400px;
 }
 
 .box {
   align-items: center;
-  border: 2px solid gray;
+  // background-color: $light-green;
+  border: 2px solid $midnight-blue;
   border-radius: 2px;
   display: flex;
   font-size: 25px;
   justify-content: center;
 
   &:hover {
-    background-color: #bfd2cd;
+    background-color: $midnight-blue;
   }
 }
 
+#start-game-button {
+  background-color: $midnight-blue;
+  border-color: $midnight-blue;
+  color: $white;
+}
+
+#previous-game-input {
+  background-color: $midnight-blue;
+  border-color: $midnight-blue;
+  color: $white;
+}
+
+#show-games-button {
+  background-color: $midnight-blue;
+  border-color: $midnight-blue;
+  color: $white;
+}
+
+#game-board-message {
+  bottom: 0;
+  font-size: 25px;
+  font-weight: 500;
+  height: 135px;
+  letter-spacing: 0.08em;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
 .error-message {
-  color: $bright-red-color;
+  color: $black;
+  margin: 20px 0 0 0;
+  text-shadow: 1px 1px $white;
 }
 
 .success-message {
-  color: $green-color;
+  color: $black;
+  margin: 20px 0 0 0;
+  text-shadow: 1px 1px $white;
 }
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    background-color: $midnight-blue;
+    color: $white;
+  }
+
+  .picture {
+    align-items: center;
+    display: flex;
+    width: 550px;
+
+    h1 {
+      margin-left: 20px;
+    }
+  }
+
+  .btn {
+    background-color: $midnight-blue;
+    border: 1px solid $white;
+
+    &:hover {
+      background-color: $nfl-red;
+    }
+
+    &:active {
+      background-color: $nfl-red;
+    }
+  }
+
+  .btn-secondary.dropdown-toggle {
+    border-color: $midnight-blue;
+
+    &:hover {
+      background-color: $nfl-red;
+    }
+  }
+
+  .btn-group {
+    background-color: $midnight-blue;
+    display: flex;
+  }
+
+  .btn-group-1 {
+    display: flex;
+  }
+
+  .board-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .game-container {
+    margin: 50px auto 0;
+  }
+
+  .previous-game-box {
+    width: 80px;
+  }
+
+  #start-new-game {
+    margin: 0 10px;
+  }
+
+  #previous-game {
+    margin: 0 10px;
+  }
+
+  #show-all-games {
+    margin: 0 10px;
+  }
+
+  body {
+    background-attachment: fixed;
+    background-color: $message;
+    background-image: url('./../../../teams/eagles-field.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+  }
+
+  .game-board {
+    background-color: $white;
+    border: 4px solid $midnight-blue;
+    border-radius: 10px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 400px;
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  .box {
+    align-items: center;
+    background-color: $light-green;
+    border: 2px solid $midnight-blue;
+    border-radius: 2px;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+
+    &:hover {
+      background-color: $midnight-blue;
+    }
+  }
+
+  #start-game-button {
+    background-color: $midnight-blue;
+    border-color: $midnight-blue;
+    color: $white;
+  }
+
+  #previous-game-input {
+    background-color: $midnight-blue;
+    border-color: $midnight-blue;
+    color: $white;
+  }
+
+  #show-games-button {
+    background-color: $midnight-blue;
+    border-color: $midnight-blue;
+    color: $white;
+  }
+
+  #game-board-message {
+    bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+    height: 100px;
+    letter-spacing: 0.08em;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .error-message {
+    color: $black;
+    margin: 20px 0 0;
+    text-shadow: 1px 1px $white;
+  }
+
+  .success-message {
+    color: $black;
+    margin: 20px 0 0;
+    text-shadow: 1px 1px $white;
+  }
+
+  .hidden {
+    display: none;
+  }
 }

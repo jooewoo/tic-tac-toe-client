@@ -8,8 +8,11 @@ const games = {
 
 const player = 'x'
 
+const playerO = 'o'
+
 module.exports = {
   store,
   games,
-  player
+  player,
+  playerO
 }

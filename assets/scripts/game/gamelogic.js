@@ -1,6 +1,6 @@
 const store = require('../store.js')
+// const config = require('../config.js')
 
-// Prevents user from clicking on an occupied space
 const gameBoard = (id, value, over) => {
   if (over === true) {
     return
@@ -21,6 +21,7 @@ const switchPlayer = (playerSwap) => {
   if (store.wrong === false) {
     const player = playerSwap === 'x' ? 'o' : 'x'
     store.player = player
+    $('#game-message').html(`${store.player}'s Turn`)
     return store.player
   }
 }
@@ -38,7 +39,7 @@ const winningConditions = (cellsBoard) => {
     store.player = 'x'
     store.over = true
     store.winner = 'x'
-    $('#game-board').html('X wins')
+    $('#game-message').html('Eagles wins')
   } else if ((cellsBoard[0] === 'o' && cellsBoard[1] === 'o' && cellsBoard[2] === 'o') ||
             (cellsBoard[3] === 'o' && cellsBoard[4] === 'o' && cellsBoard[5] === 'o') ||
             (cellsBoard[6] === 'o' && cellsBoard[7] === 'o' && cellsBoard[8] === 'o') ||
@@ -50,12 +51,12 @@ const winningConditions = (cellsBoard) => {
     store.player = 'x'
     store.over = true
     store.winner = 'o'
-    $('#game-board').html('O wins')
+    $('#game-message').html('Partiots wins')
   } else if (cellsBoard[0] !== '' && cellsBoard[1] !== '' && cellsBoard[2] !== '' && cellsBoard[3] !== '' && cellsBoard[4] !== '' && cellsBoard[5] !== '' && cellsBoard[6] !== '' && cellsBoard[7] !== '' && cellsBoard[8] !== '') {
     store.player = 'x'
     store.over = true
     store.winner = 'draw'
-    $('#game-board').html('It is a draw, no one wins. Please try again')
+    $('#game-message').html('It is a draw, no one wins. Please try again')
   }
 }
 

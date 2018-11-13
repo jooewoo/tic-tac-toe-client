@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const config = require('../config.js')
 
 const createGameSuccess = (game) => {
   // THe next 3 lines store the game ID, cells, and over
@@ -7,16 +8,18 @@ const createGameSuccess = (game) => {
   store.cells = game.game.cells
   store.over = game.game.over
   // console.log('this is the store object', store)
+  $('#game-message').show()
   $('#game-message').html(`New game was created.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
+  $('#game-message').html(`${store.player}'s turn`)
   $('#board').show()
   $('.box').empty()
 }
 
-const getGameSuccess = (gameId) => {
+const getGameSuccess = (gameData) => {
   // console.log('this is get game success object', gameId)
-  $('#game-message').html(`Previous game with game id:"${gameId}" was loaded.`)
+  $('#game-message').html(`Previous game with game id:"${gameData}" was loaded.`)
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
   $('#board').show()
@@ -37,9 +40,9 @@ const failure = () => {
 
 const updateMoves = (id, value, over, winner) => {
   if (value === 'x' && over === false && store.cells[id] === '') {
-    $($(event.target)).html(value)
+    $($(event.target)).html(`<img src=${config.teamIconsUrls.eagles} alt=nfl-icon height="95" width="125">`)
   } else if (value === 'o' && over === false && store.cells[id] === '') {
-    $($(event.target)).html(value)
+    $($(event.target)).html(`<img src=${config.teamIconsUrls.patriots} alt=nfl-icon height="105" width="125">`)
   }
 }
 

@@ -19,13 +19,13 @@ const onGetGame = (event) => {
   event.preventDefault()
   const gameData = getFormFields(event.target)
   // the unique game ID so you can access it later
-  const gameId = gameData.game.id
+  console.log(gameData)
   $(event.target).trigger('reset')
-  if (gameId === '') {
-    $('#game-board').html('Please enter an ID')
+  if (gameData === '') {
+    $('#game-message').html('Please enter an ID')
   } else {
-    $('#game-board').addClass('hidden')
-    api.getGame(gameId)
+    $('#game-message').addClass('hidden')
+    api.getGame(gameData)
       .then(ui.getGameSuccess)
       .catch(ui.failure)
   }
