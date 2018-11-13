@@ -1,14 +1,14 @@
 # NFL Tic Tac Toe Game - Project One by Joe Woo WDI Cohort 28
 
 ## Technologies Used
-- HTML
-- Class
-- Javascript
-- SASS
-- Boostrap
-- AJAX
-- Jquery
-- Tic Tac Toe API
+* HTML
+* Class
+* Javascript
+* SASS
+* Boostrap
+* AJAX
+* Jquery
+* Tic Tac Toe API
 
 ## Development Process/Problem Solving Strategy
 My initial approach was to get the API and Javascript working, and to work on the styling of the board last. I made a basic HTML page so I could see my results, and made sure all the interactions were displaying correctly. Then, I wanted to style it the way I wanted to display more of my own personality. Finally, I progressed into the stretch goals that were assigned.

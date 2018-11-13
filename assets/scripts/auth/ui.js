@@ -1,32 +1,13 @@
 'use strict'
 const store = require('../store.js')
 
-<<<<<<< HEAD
-const signUpSuccess = (signUpRespone) => {
-=======
 const signUpSuccess = (signUpResponse) => {
-<<<<<<< HEAD
->>>>>>> feature
   $('#message').html('You signed up successfully')
   $('#message').removeClass('error-message')
   $('#message').addClass('success-message')
 }
 
 const signInSuccess = (signInResponse) => {
-<<<<<<< HEAD
-=======
-  console.log('this is the' + signInResponse)
->>>>>>> feature
-=======
-  $('#game-message').show()
-  $('#game-message').html('You signed up successfully')
-  $('#game-message').removeClass('error-message')
-  $('#game-message').addClass('success-message')
-  $('#game-message').fadeOut(5000)
-}
-
-const signInSuccess = (signInResponse) => {
->>>>>>> feature
   store.user = signInResponse.user
   $('#game-message').show()
   $('#game-message').html('You signed in successfully')
@@ -42,16 +23,6 @@ const signInSuccess = (signInResponse) => {
   $('.board-buttons').removeClass('hidden')
   $('#previous-game').removeClass('hidden')
   $('#show-all-games').removeClass('hidden')
-}
-
-<<<<<<< HEAD
-const failure = (FailureResponse) => {
-=======
-const changePasswordSuccess = () => {
-  $('#game-message').html('You changed password successfully')
-  $('#game-message').removeClass('error-message')
-  $('#game-message').addClass('success-message')
-  $('#game-message').fadeOut(5000)
 }
 
 const signOutSuccess = () => {
@@ -72,28 +43,14 @@ const signOutSuccess = () => {
 }
 
 const failure = (failureResponse) => {
-<<<<<<< HEAD
->>>>>>> feature
-  $('.failure').html('Something went wrong, please try again.')
-  $('.failure').removeClass('success-message')
-  $('.failure').addClass('error-message')
-=======
   $('#game-message').html('Something went wrong, please try again.')
   $('#game-message').removeClass('success-message')
   $('#game-message').addClass('error-message')
->>>>>>> feature
 }
 
-<<<<<<< HEAD
-module.export = {
-  signUpSuccess,
-  signInSuccess,
-=======
 module.exports = {
   signUpSuccess,
   signInSuccess,
-  changePasswordSuccess,
   signOutSuccess,
->>>>>>> feature
   failure
 }
