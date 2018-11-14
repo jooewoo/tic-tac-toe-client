@@ -83,7 +83,7 @@ $light-green: #add1ba;
 
 body {
   background-attachment: fixed;
-  background-image: url('./../../public/teams/nfl-field.png');
+  background-image: url('./public/teams/nfl-field.png');
   // background-repeat: repeat;
   // background-size: auto auto;
   background-position: center;
@@ -239,7 +239,7 @@ body {
   body {
     background-attachment: fixed;
     background-color: $message;
-    background-image: url('./../../../teams/eagles-field.png');
+    background-image: url('./public/teams/eagles-field.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto auto;
