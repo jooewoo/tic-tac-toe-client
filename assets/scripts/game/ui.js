@@ -40,9 +40,9 @@ const failure = () => {
 
 const updateMoves = (id, value, over, winner) => {
   if (value === 'x' && over === false && store.cells[id] === '') {
-    $($(event.target)).html(`<img src=${config.teamIconsUrls.eagles} alt=nfl-icon height="95" width="125">`)
+    $($(event.target)).html(`<img src=${config.apiUrls + config.teamIconsUrls.eagles} alt=nfl-icon height="95" width="125">`)
   } else if (value === 'o' && over === false && store.cells[id] === '') {
-    $($(event.target)).html(`<img src=${config.teamIconsUrls.patriots} alt=nfl-icon height="105" width="125">`)
+    $($(event.target)).html(`<img src=${config.apiUrls + config.teamIconsUrls.patriots} alt=nfl-icon height="105" width="125">`)
   }
 }
 
