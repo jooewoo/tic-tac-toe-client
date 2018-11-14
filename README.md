@@ -37,10 +37,10 @@ Once I finished both the User and Game Authentication, and game logic, I styled 
 After revaluating my code, I noticed that there are easier and shorter ways of writing my code. I would like to use more ternary operators as much as I can. I would also like to work on the multiplayer API, and the ability to play games through multiple devices. Also, I want to make my tic tac toe game similar to the NFL website. Another challenege would be to get rid of the HTML board, and create the board from javascript alone. Overall, I am a perfectionist, and I want to push myself to beyond my capped potential.
 
 ## Wireframes/User Stories
-#User Stories
+### User Stories
 - I want to verse the best computer AI and still wins
 - I want a clean, responsive page that is easy to use on the phone
 - I want to be able to play against other people and be the best
 - I want to be able to play my previous game that I forgot to finish
 
-#Wireframes
+### Wireframes
