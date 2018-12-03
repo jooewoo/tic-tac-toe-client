@@ -6,7 +6,7 @@ const signUpSuccess = (signUpResponse) => {
   $('#game-message').html('You signed up successfully')
   $('#game-message').removeClass('error-message')
   $('#game-message').addClass('success-message')
-  $('#game-message').fadeOut(5000)
+  // $('#game-message').fadeOut(5000)
 }
 
 const signInSuccess = (signInResponse) => {
