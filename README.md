@@ -44,4 +44,4 @@ After revaluating my code, I noticed that there are easier and shorter ways of w
 - I want to be able to play my previous game that I forgot to finish
 
 ### Wireframes
-![Wireframe](https://imgur.com/a/vMDOUdX)
+![Wireframe](https://github.com/jooewoo/tic-tac-toe-client/blob/master/public/Wireframe.png)
