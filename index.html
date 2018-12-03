@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <nav class="navbar">
+        <div class="picture">
+          <img src="./public/teams/nfl-icon.png" alt="nfl-icon" height="75" width="75">
+          <h1>NFL Tic Tac Toe</h1>
+        </div>
+
+        <div class="btn-group">
+          <div id="sign-up-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign Up!
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up">
+              <form id="sign-up-form">
+                <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" id="password" placeholder="password">
+                <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div id="sign-in-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign In
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in">
+              <form id="sign-in-form">
+                <input name="credentials[email]" type="text" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" placeholder="password">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div class="btn-group-1">
+            <div id="change-password-dropdown" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Password
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-right">
+                <form id="change-password-form">
+                  <input name="passwords[old]" type="password" placeholder="old password"/>
+                  <input name="passwords[new]" type="password" placeholder="new password"/>
+                  <input type="submit" placeholder="Submit"/>
+                </form>
+              </div>
+            </div>
+
+            <div id="sign-out-button" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                Sign Out
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="board-buttons">
+        <div id="start-new-game" class="hidden">
+          <button id="start-game-button">Start New Game</button>
+        </div>
+
+        <!-- <form id="previous-game" class="hidden">
+          <input class="previous-game-box" name="game[id]" type="text" placeholder="Game ID">
+          <input type="submit" id="previous-game-input" placeholder="Previous Game">
+        </form> -->
+
+        <!-- <div class="show-all-games-dropdown hidden">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="show-all-games-dropdown-id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Show All Games
+          </button>
+          <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="show-all-games-dropdown-id">
+          </div>
+        </div> -->
+
+        <div id="show-all-games" class="hidden">
+          <button id="show-games-button">Show All Games</button>
+        </div>
+
+      </div>
+
+      <div id="board" class="container hidden">
+          <div class="game-container">
+          <div class="game-board">
+            <div data-cell-index='0' class="box"></div>
+            <div data-cell-index='1' class="box"></div>
+            <div data-cell-index='2' class="box"></div>
+            <div data-cell-index='3' class="box"></div>
+            <div data-cell-index='4' class="box"></div>
+            <div data-cell-index='5' class="box"></div>
+            <div data-cell-index='6' class="box"></div>
+            <div data-cell-index='7' class="box"></div>
+            <div data-cell-index='8' class="box"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="choose-player">
+      <div class="icon">
+        <img id="player_x" alt="player x" data-player="1" data-toggle="modal" data-target="choose-#nfl-team" class="world-wonders" src="./../../teams/eagles.png">
+        <p>vs</p>
+        <img id="player2" alt="player 2" data-player="2" data-toggle="modal" data-target="choose-#nfl-team" class="nfl-teams" src="./../../teams/patriots.png">
+      </div>
+
+      <div class="modal fade" id="choose-#nfl-team" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog player-choice modal-dialog-centered" role="dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-header">Choose your favorite team</h5>
+            </div>
+            <div class="modal-body list">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div id="game-board-message">
+        <p id="game-message" class="game-failure"></p>
+        <p id="players-turn"></p>
+      </div>
+
+    </body>
+</html>
