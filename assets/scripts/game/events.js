@@ -19,7 +19,6 @@ const onGetGame = (event) => {
   event.preventDefault()
   const gameData = getFormFields(event.target)
   // the unique game ID so you can access it later
-  console.log(gameData)
   $(event.target).trigger('reset')
   if (gameData === '') {
     $('#game-message').html('Please enter an ID')
@@ -34,9 +33,8 @@ const onGetGame = (event) => {
 // In the event that user clicks all game, contacts API for all the game data
 const onShowAllGames = (event) => {
   event.preventDefault()
-  const gameData = getFormFields(event.target)
   $(event.target).trigger('reset')
-  api.showAllGames(gameData)
+  api.showAllGames()
     .then(ui.showAllGamesSuccess)
     .catch(ui.failure)
 }

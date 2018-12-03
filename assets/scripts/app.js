@@ -11,6 +11,7 @@ $(() => {
 
   $('#start-game-button').on('click', gameEvents.onCreateGame)
   $('#previous-game').on('submit', gameEvents.onGetGame)
+  // $('#show-all-games-dropdown-id').on('click', gameEvents.onShowAllGames)
   $('#show-games-button').on('click', gameEvents.onShowAllGames)
   $('.box').on('click', gameEvents.onUpdateMove)
 })

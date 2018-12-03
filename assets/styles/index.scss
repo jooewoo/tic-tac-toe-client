@@ -186,9 +186,9 @@ body {
       background-color: $nfl-red;
     }
 
-    &:active {
-      background-color: $nfl-red;
-    }
+    // &:active {
+    //   background-color: $nfl-red;
+    // }
   }
 
   .btn-secondary.dropdown-toggle {
@@ -239,10 +239,10 @@ body {
   body {
     background-attachment: fixed;
     background-color: $message;
-    background-image: url('./public/teams/eagles-field.png');
+    background-image: url('./public/teams/footballfield.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto auto;
+    background-size: cover;
   }
 
   .game-board {

@@ -21,7 +21,6 @@ const switchPlayer = (playerSwap) => {
   if (store.wrong === false) {
     const player = playerSwap === 'x' ? 'o' : 'x'
     store.player = player
-    $('#game-message').html(`${store.player}'s Turn`)
     return store.player
   }
 }
@@ -39,6 +38,7 @@ const winningConditions = (cellsBoard) => {
     store.player = 'x'
     store.over = true
     store.winner = 'x'
+    store.eagles += 1
     $('#game-message').html('Eagles wins')
   } else if ((cellsBoard[0] === 'o' && cellsBoard[1] === 'o' && cellsBoard[2] === 'o') ||
             (cellsBoard[3] === 'o' && cellsBoard[4] === 'o' && cellsBoard[5] === 'o') ||
@@ -51,6 +51,7 @@ const winningConditions = (cellsBoard) => {
     store.player = 'x'
     store.over = true
     store.winner = 'o'
+    store.patriots += 1
     $('#game-message').html('Partiots wins')
   } else if (cellsBoard[0] !== '' && cellsBoard[1] !== '' && cellsBoard[2] !== '' && cellsBoard[3] !== '' && cellsBoard[4] !== '' && cellsBoard[5] !== '' && cellsBoard[6] !== '' && cellsBoard[7] !== '' && cellsBoard[8] !== '') {
     store.player = 'x'
